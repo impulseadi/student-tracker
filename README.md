@@ -4,8 +4,8 @@ A fullstack MERN web application that allows students to efficiently track their
 
 ## 🌐 Live Demo
 
-Frontend: [https://student-tracker.vercel.app](https://student-tracker.vercel.app)  
-Backend: [https://student-tracker-api.onrender.com](https://student-tracker-api.onrender.com)
+Frontend: [https://student-tracker.vercel.app](https://student-tracker-git-main-impulseadis-projects.vercel.app/)  
+Backend: [https://student-tracker-api.onrender.com](https://dashboard.render.com/web/srv-cvs9l46r433s73c1l4mg)
 
 ---
 
@@ -61,7 +61,7 @@ student-job-tracker/
 │
 └── README.md
 
----
+```
 Setup
 cd client
 npm install
@@ -81,6 +81,19 @@ Frontend: Vercel
 Backend: Render
 
 Database: MongoDB Atlas
+
+## 🔗 API Base URL
+
+This project uses a hosted backend API on Render:
+
+
+If you're forking this repo and deploying your own backend, make sure to update the API base URL in the frontend files (e.g., in `AppContext.js` or wherever fetch calls are made).
+
+You can replace:
+```js
+fetch("/api/jobs")
+fetch("https://your-own-backend.onrender.com/api/jobs")
+Thanks.
 
 
 
