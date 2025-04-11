@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 const AppContext = createContext();
+const API_BASE = import.meta.env.VITE_API_URL;
+
 
 export const AppProvider = ({ children }) => {
   const [applications, setApplications] = useState([]);
@@ -8,7 +10,7 @@ export const AppProvider = ({ children }) => {
 
   // ✅ Fetch all jobs on mount
   useEffect(() => {
-    fetch("/api/jobs")
+    fetch(`${API_BASE}/api/jobs`)
       .then(res => res.json())
       .then(data => setApplications(data))
       .catch(err => console.error("Error fetching jobs:", err));
@@ -16,7 +18,7 @@ export const AppProvider = ({ children }) => {
 
   // ✅ Add job
   const addJob = async (newJob) => {
-    const res = await fetch("/api/jobs", {
+    const res = await fetch(`${API_BASE}/api/jobs`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newJob),
@@ -27,7 +29,7 @@ export const AppProvider = ({ children }) => {
 
   // ✅ Update status
   const updateJobStatus = async (id, newStatus) => {
-    const res = await fetch(`/api/jobs/${id}`, {
+    const res = await fetch(`${API_BASE}/api/jobs/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ status: newStatus }),
@@ -40,7 +42,7 @@ export const AppProvider = ({ children }) => {
 
   // ✅ Delete job
   const deleteJob = async (id) => {
-    await fetch(`/api/jobs/${id}`, { method: "DELETE" });
+    await fetch(`${API_BASE}/api/jobs/${id}`, { method: "DELETE" });
     setApplications(prev => prev.filter(job => job._id !== id));
   };
 
