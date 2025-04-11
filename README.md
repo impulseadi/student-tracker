@@ -60,22 +60,29 @@ student-job-tracker/
 │   └── server.js
 │
 └── README.md
-Setup Frontend
 
-
-Copy
+---
+Setup
 cd client
 npm install
 npm run dev
-Setup Backend
 
-bash
-Copy
-Edit
 cd ../server
 npm install
 npm run dev
 
-## 🧰 Tech Stack
-Variable	Description
-MONGODB_URI	MongoDB connection URI
+In.env configure
+MONGODB_URI=your_mongodb_uri
+
+
+📦 Deployment
+Frontend: Vercel
+
+Backend: Render
+
+Database: MongoDB Atlas
+
+
+
+
+
