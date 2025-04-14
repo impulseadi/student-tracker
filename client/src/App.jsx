@@ -18,6 +18,7 @@ function App() {
      <JobForm/>
      <Filters/>
      <JobList/>
+     <Analytics/>
     </>
   )
 }
